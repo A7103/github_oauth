@@ -3,7 +3,7 @@ Go package that simple use for github oauth
 
 ## How to run?
 1. Read the [github doc](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app) for create an Oauth app
-2. Set Homepage URL to `http://localhost:8080/`, Set Authorization callback URL to `http://localhost:8080/oauth/redirect`
+2. Set Homepage URL to `http://localhost:8080/`, Set Authorization callback URL to `http://localhost:8080/oauth/redirect` when create Oauth app
    - ![img.png](readmeimg/img.png)
 3. Get `Client ID` and `Client Secret`
    - ![client_id and client_secret.png](readmeimg/img_1.png)
@@ -22,4 +22,4 @@ Go package that simple use for github oauth
    go run main.go
    ```
 6. Now you can do something in `localhost:8080`
-   ![img.png](readmeimg/img_2.png)
+   - ![img.png](readmeimg/img_2.png)
