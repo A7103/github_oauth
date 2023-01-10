@@ -11,7 +11,7 @@ import (
 type GithubOauthConfig struct {
 	ClientID     string
 	ClientSecret string
-	RedirectUrl  string // Authorization callback URL
+	RedirectURL  string // Authorization callback URL
 }
 
 type OauthServ struct {

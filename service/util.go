@@ -70,7 +70,7 @@ func formatOauthAuthorizeURL(config GithubOauthConfig, redirectURLType RedirectU
 	q := u.Query()
 	q.Set(ClientIDKey, config.ClientID)
 
-	redirectURL, err := getRedirectURL(config.RedirectUrl, redirectURLType)
+	redirectURL, err := getRedirectURL(config.RedirectURL, redirectURLType)
 	if err != nil {
 		return "", err
 	}
