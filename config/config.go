@@ -14,7 +14,7 @@ func MustGetGithubOauthConfig() service.GithubOauthConfig {
 	}
 
 	var cfg service.GithubOauthConfig
-	err := configor.New(&configor.Config{ENVPrefix: "GITHUB_OAUTH", Debug: true}).Load(&cfg)
+	err := configor.New(&configor.Config{ENVPrefix: "GITHUB_OAUTH"}).Load(&cfg)
 	if err != nil {
 		panic(err)
 	}
