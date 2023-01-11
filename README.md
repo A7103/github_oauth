@@ -1,5 +1,5 @@
 # github oauth
-Go package that simple use for github oauth
+A simple example of the use of github oauth for the Go language
 
 ## How to run?
 1. Read the [github doc](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app) for create an Oauth app
