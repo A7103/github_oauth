@@ -64,13 +64,13 @@ func (o *OauthServ) oauth(w http.ResponseWriter, r *http.Request, t RedirectURLT
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte(fmt.Sprintf("get access token url failed, err message: %s", err.Error())))
+		return
 	}
 
 	token, err := getToken(url)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte(fmt.Sprintf("get token failed, err message: %s", err.Error())))
-
 		return
 	}
 
