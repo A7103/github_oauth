@@ -6,6 +6,5 @@ require github.com/jinzhu/configor v1.2.2-0.20230118083828-f7a0fc7c9fc6
 
 require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
-	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
