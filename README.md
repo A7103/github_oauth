@@ -7,19 +7,22 @@ A simple example of the use of github oauth for the Go language
    - ![img.png](readmeimg/img.png)
 3. Get `Client ID` and `Client Secret`
    - ![client_id and client_secret.png](readmeimg/img_1.png)
-4. Populate them into [dev_env](dev_env) file
-   - `GITHUB_OAUTH_ClientID` = `Client ID`
-   - `GITHUB_OAUTH_ClientSecret` = `Client Secret`
-   - `GITHUB_OAUTH_RedirectURL` = Authorization callback URL (`http://localhost:8080/oauth/redirect`)
+4. Populate them into [dev_env](dev_env) or [config.json](config.json)
+   - NOTE: 
+     - `RedirectURL` = Authorization callback URL (`http://localhost:8080/oauth/redirect`)
+     - if `dev_env` and `config.json` simultaneously exist, `dev_env` data will overwrite of `config.json`
 5. Open you terminal, execute the following code in order:
-   ```go
-   go get -v -u ./...
-   ```
-   ```shell
-   source dev_env
-   ```
-   ```go
-   go run main.go
-   ```
+      ```go
+      go get -v ./...
+      ```
+ 
+      ```shell
+      # Can be ignored if using config.json
+      source dev_env
+      ```
+ 
+      ```go
+      go run main.go
+      ```
 6. Now you can do something in `localhost:8080`
    - ![img.png](readmeimg/img_2.png)
