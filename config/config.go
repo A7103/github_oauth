@@ -13,13 +13,13 @@ func MustGetGithubOauthConfig() service.GithubOauthConfig {
 		return *_config
 	}
 
-	var cfg service.GithubOauthConfig
-	err := configor.New(&configor.Config{ENVPrefix: "GITHUB_OAUTH"}).Load(&cfg)
+	cfg := &service.GithubOauthConfig{}
+	err := configor.New(&configor.Config{ENVPrefix: "GITHUB_OAUTH"}).Load(cfg, "config.json")
 	if err != nil {
 		panic(err)
 	}
 
-	_config = &cfg
+	_config = cfg
 
 	return *_config
 }
