@@ -15,12 +15,12 @@ type GithubOauthConfig struct {
 
 type OauthServ struct {
 	tmpl   *template.Template
-	config GithubOauthConfig
+	config *GithubOauthConfig
 }
 
 func MustGetOauthServ(
 	tmpl *template.Template,
-	config GithubOauthConfig,
+	config *GithubOauthConfig,
 ) *OauthServ {
 	return &OauthServ{
 		tmpl:   tmpl,
@@ -29,7 +29,7 @@ func MustGetOauthServ(
 }
 
 func (o *OauthServ) HomePage(w http.ResponseWriter, r *http.Request) {
-	data, err := getOauthAuthorizeURLs(o.config)
+	data, err := getOauthAuthorizeURLs(*o.config)
 	if err != nil {
 		panic(err)
 	}
@@ -60,7 +60,7 @@ const (
 
 func (o *OauthServ) oauth(w http.ResponseWriter, r *http.Request, t RedirectURLType) {
 	code := r.URL.Query().Get("code")
-	url, err := getAccessTokenUrl(o.config, code)
+	url, err := getAccessTokenUrl(*o.config, code)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte(fmt.Sprintf("get access token url failed, err message: %s", err.Error())))

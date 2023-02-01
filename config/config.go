@@ -8,20 +8,20 @@ import (
 
 var _config *service.GithubOauthConfig
 
-func MustGetGithubOauthConfig() service.GithubOauthConfig {
+func MustGetGithubOauthConfig() *service.GithubOauthConfig {
 	if _config != nil {
-		return *_config
+		return _config
 	}
 
 	cfg := &service.GithubOauthConfig{}
-	err := configor.New(&configor.Config{ENVPrefix: "GITHUB_OAUTH"}).Load(cfg, "config.json")
+	err := configor.New(&configor.Config{ENVPrefix: "GITHUB_OAUTH", AutoReload: true}).Load(cfg, "config.json")
 	if err != nil {
 		panic(err)
 	}
 
 	_config = cfg
 
-	return *_config
+	return _config
 }
 
 func MustGetOauthServ() *service.OauthServ {
